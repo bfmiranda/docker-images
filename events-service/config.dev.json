@@ -1,0 +1,7 @@
+{
+    "PORT": "8086",
+    "REDIS_HOST" : "redis-service",
+    "REDIS_PORT" : 6379,
+    "REDIS_DB_NUMBER": 2,
+    "REDIS_PASSWORD" : ""
+}
