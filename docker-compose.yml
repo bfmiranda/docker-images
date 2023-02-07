@@ -24,6 +24,20 @@ services:
     depends_on:
       - app-redis
     restart: always
+    
+  app-mysql:
+    build:
+      context: ./mysql-database
+      dockerfile: Dockerfile
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=debezium
+      - MYSQL_USER=mysqluser
+      - MYSQL_PASSWORD=mysqlpw
+    networks:
+      - redis-microservices-network
+    restart: always
 
 networks:
   redis-microservices-network:
