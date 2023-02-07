@@ -1,0 +1,5 @@
+io/redis/demos/services/db/events/streams/RestStatusController.class
+io/redis/demos/services/db/events/streams/service/RedisStreamsDebeziumProducer.class
+io/redis/demos/services/db/events/streams/RedisStreamsCDCPublisher.class
+io/redis/demos/services/db/events/streams/listener/CDCEventListener.class
+io/redis/demos/services/db/events/streams/config/ConnectorConfig.class
