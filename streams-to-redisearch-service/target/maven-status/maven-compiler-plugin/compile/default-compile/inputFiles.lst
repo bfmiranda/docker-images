@@ -1,0 +1,8 @@
+/home/bruno/Projetos/redis-microservices-demo/streams-to-redisearch-service/src/main/java/io/redis/demos/services/search/service/schemas/MoviesSchema.java
+/home/bruno/Projetos/redis-microservices-demo/streams-to-redisearch-service/src/main/java/io/redis/demos/services/search/service/schemas/ActorsSchema.java
+/home/bruno/Projetos/redis-microservices-demo/streams-to-redisearch-service/src/main/java/io/redis/demos/services/search/service/schemas/CommentsSchema.java
+/home/bruno/Projetos/redis-microservices-demo/streams-to-redisearch-service/src/main/java/io/redis/demos/services/search/service/StreamsToRediSearch.java
+/home/bruno/Projetos/redis-microservices-demo/streams-to-redisearch-service/src/main/java/io/redis/demos/services/search/service/schemas/KeysPrefix.java
+/home/bruno/Projetos/redis-microservices-demo/streams-to-redisearch-service/src/main/java/io/redis/demos/services/search/service/SearchServiceApplication.java
+/home/bruno/Projetos/redis-microservices-demo/streams-to-redisearch-service/src/main/java/io/redis/demos/services/search/service/RestStatusController.java
+/home/bruno/Projetos/redis-microservices-demo/streams-to-redisearch-service/src/main/java/io/redis/demos/services/search/service/util/AutoCompleter.java

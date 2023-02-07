@@ -1,5 +1,0 @@
-/home/bruno/Projetos/redis-microservices-demo/db-to-streams-service/src/main/java/io/redis/demos/services/db/events/streams/RedisStreamsCDCPublisher.java
-/home/bruno/Projetos/redis-microservices-demo/db-to-streams-service/src/main/java/io/redis/demos/services/db/events/streams/config/ConnectorConfig.java
-/home/bruno/Projetos/redis-microservices-demo/db-to-streams-service/src/main/java/io/redis/demos/services/db/events/streams/listener/CDCEventListener.java
-/home/bruno/Projetos/redis-microservices-demo/db-to-streams-service/src/main/java/io/redis/demos/services/db/events/streams/RestStatusController.java
-/home/bruno/Projetos/redis-microservices-demo/db-to-streams-service/src/main/java/io/redis/demos/services/db/events/streams/service/RedisStreamsDebeziumProducer.java

@@ -1,0 +1,5 @@
+io/redis/demos/debezium/sql/controllers/RestStatusController.class
+io/redis/demos/debezium/sql/services/DataGeneratorService.class
+io/redis/demos/debezium/sql/controllers/MoviesAPIController.class
+io/redis/demos/debezium/sql/Application.class
+io/redis/demos/debezium/sql/controllers/ActorsAPIController.class

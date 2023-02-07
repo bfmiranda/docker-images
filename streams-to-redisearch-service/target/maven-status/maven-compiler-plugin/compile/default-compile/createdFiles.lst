@@ -1,0 +1,9 @@
+io/redis/demos/services/search/service/util/AutoCompleter.class
+io/redis/demos/services/search/service/SearchServiceApplication.class
+io/redis/demos/services/search/service/StreamsToRediSearch.class
+io/redis/demos/services/search/service/util/AutoCompleter$Command.class
+io/redis/demos/services/search/service/schemas/KeysPrefix.class
+io/redis/demos/services/search/service/schemas/CommentsSchema.class
+io/redis/demos/services/search/service/schemas/ActorsSchema.class
+io/redis/demos/services/search/service/RestStatusController.class
+io/redis/demos/services/search/service/schemas/MoviesSchema.class

@@ -1,0 +1,6 @@
+io/redis/demos/services/caching/service/RedisCacheService.class
+io/redis/demos/services/caching/service/WebServiceCachingService.class
+io/redis/demos/services/caching/CachingServiceApplication.class
+io/redis/demos/services/caching/RestStatusController.class
+io/redis/demos/services/caching/listener/CDCEventListener.class
+io/redis/demos/services/caching/config/ConnectorConfig.class

@@ -54,6 +54,87 @@ services:
     depends_on:
       - app-redis
     restart: always
+  
+  app-sql-rest-api:
+    build:
+      context: ./sql-rest-api
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://app-mysql:3306/inventory
+      - SPRING_DATASOURCE_USERNAME=mysqluser
+      - SPRING_DATASOURCE_PASSWORD=mysqlpw
+    networks:
+      - redis-microservices-network
+    depends_on:
+      - app-mysql
+    restart: always
+  
+  app-caching:
+    build:
+      context: ./caching-service
+      dockerfile: Dockerfile
+    ports:
+      - "8084:8084"
+    environment:
+      - REDIS_HOST=app-redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=
+    networks:
+      - redis-microservices-network
+    depends_on:
+      - app-mysql
+      - app-redis
+    restart: always
+
+  app-streams-to-redis-hashes:
+    build:
+      context: ./streams-to-redisearch-service
+      dockerfile: Dockerfile
+    ports:
+      - "8085:8085"
+    environment:
+      - REDIS_HOST=app-redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=
+    networks:
+      - redis-microservices-network
+    depends_on:
+      - app-redis
+    restart: always
+
+  app-comments:
+    build:
+      context: ./comments-service
+      dockerfile: Dockerfile
+    ports:
+      - "8086:8086"
+    environment:
+      - REDIS_HOST=app-redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=
+    networks:
+      - redis-microservices-network
+    depends_on:
+      - app-redis
+    restart: always
+
+  ws-notifications-service:
+      build:
+        context: ./notifications-service-node
+        dockerfile: Dockerfile
+      ports:
+        - "8888:8888"
+      environment:
+        - REDIS_HOST=app-redis
+        - REDIS_PORT=6379
+        - REDIS_PASSWORD=
+      networks:
+        - redis-microservices-network
+      depends_on:
+        - app-redis
+      restart: always
 
 networks:
   redis-microservices-network:
