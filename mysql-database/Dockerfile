@@ -1,12 +1,12 @@
-FROM mysql:5.7
+FROM mysql:8
 
 LABEL maintainer="Debezium Community & Tugdual Grall"
 
-ENV MYSQL_ROOT_PASSWORD=debezium
+ENV MYSQL_ROOT_PASSWORD=Kalangos
 ENV MYSQL_USER=mysqluser
 ENV MYSQL_PASSWORD=mysqlpw
 
-EXPOSE 3306
+EXPOSE 33060
 
 COPY mysql.cnf /etc/mysql/conf.d/
 COPY import-data.sql /docker-entrypoint-initdb.d/
