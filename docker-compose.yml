@@ -8,7 +8,37 @@ services:
     networks:
       - redis-microservices-network
     restart: always
-
+  
+  app-mysql:
+    build:
+      context: ./mysql-database
+      dockerfile: Dockerfile
+    ports:
+      - "33060:33060"
+    environment:
+      - MYSQL_ROOT_PASSWORD=Kalangos
+      - MYSQL_USER=mysqluser
+      - MYSQL_PASSWORD=mysqlpw
+    networks:
+      - redis-microservices-network
+    restart: always  
+  
+  app-db-to-streams:
+    build:
+      context: ./db-to-streams-service
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    environment:
+      - REDIS_HOST=app-redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=
+    networks:
+      - redis-microservices-network
+    restart: always
+    depends_on:
+      - app-mysql
+      - app-redis
   app-events:
     build:
       context: ./events-service
@@ -23,20 +53,6 @@ services:
       - redis-microservices-network
     depends_on:
       - app-redis
-    restart: always
-
-  app-mysql:
-    build:
-      context: ./mysql-database
-      dockerfile: Dockerfile
-    ports:
-      - "33060:33060"
-    environment:
-      - MYSQL_ROOT_PASSWORD=Kalangos
-      - MYSQL_USER=mysqluser
-      - MYSQL_PASSWORD=mysqlpw
-    networks:
-      - redis-microservices-network
     restart: always
 
 networks:
