@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+
+  app-redis:
+    image: redislabs/redismod:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - redis-microservices-network
+    restart: always
+
+  app-events:
+    build:
+      context: ./events-service
+      dockerfile: Dockerfile
+    ports:
+      - "8086:8086"
+    environment:
+      - REDIS_HOST=app-redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=
+    networks:
+      - redis-microservices-network
+    depends_on:
+      - app-redis
+    restart: always
+
+networks:
+  redis-microservices-network:
+    driver: bridge
